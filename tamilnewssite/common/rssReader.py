@@ -12,6 +12,7 @@ class rssresult(object):
         self.desc = desc
 
 # function that takes URLs are params, then parse and save it class of array
+# Testing 
 def GetParseResults(urls):
    resultList = []
    for i in urls:
@@ -30,6 +31,6 @@ def GetParseResults(urls):
              src = images['src']
          resultList.append(rssresult(x.title,x.link,x.published,src,x.summary,para))
       #print len(resultList)
-      
-             
+
+
    return resultList
