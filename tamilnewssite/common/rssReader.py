@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import feedparser
+from dateutil.parser import parse
 
 # define class object to hold parsed data fields
 class rssresult(object):
@@ -12,7 +13,7 @@ class rssresult(object):
         self.desc = desc
 
 # function that takes URLs are params, then parse and save it class of array
-# Testing 
+# Testing
 def GetParseResults(urls):
    resultList = []
    for i in urls:
@@ -29,7 +30,11 @@ def GetParseResults(urls):
          if images is not None :
              #para = soup.find('<p>')
              src = images['src']
-         resultList.append(rssresult(x.title,x.link,x.published,src,x.summary,para))
+         d= parse(str(x.published))
+         dt = d.strftime('%Y-%m-%d %H:%S')
+         #print (d)
+         print(dt)
+         resultList.append(rssresult(x.title,x.link,dt,src,x.summary,para))
       #print len(resultList)
 
 
