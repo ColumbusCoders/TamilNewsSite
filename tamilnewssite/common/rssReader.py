@@ -35,6 +35,8 @@ def GetParseResults(urls):
          #print (d)
          print(dt)
          resultList.append(rssresult(x.title,x.link,dt,src,x.summary,para))
+      # Sort the result object using date
+      resultList.sort(key=lambda r: r.published,reverse=True)
       #print len(resultList)
 
 
