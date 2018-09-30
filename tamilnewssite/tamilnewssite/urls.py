@@ -22,6 +22,5 @@ urlpatterns = [
     path('business/',include('business.urls')),
     path('cinema/',include('cinema.urls')),
     path('sports/',include('sports.urls')),
-    
- 
+    path('divine/',include('divine.urls')),
 ]

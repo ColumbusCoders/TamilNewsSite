@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'business',
     'cinema',
     'sports',
+    'divine',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
